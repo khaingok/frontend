@@ -1,0 +1,20 @@
+/* CSS tùy chỉnh để làm game đẹp hơn */
+body {
+    font-family: 'Inter', sans-serif;
+    touch-action: none; /* Vô hiệu hóa hành vi cuộn/thu phóng mặc định trên màn hình cảm ứng */
+}
+
+/* Hiệu ứng chuyển động cho các ô */
+.tile {
+    transition: all 0.15s ease-in-out;
+}
+
+/* Ngăn người dùng chọn văn bản */
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Old versions of Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
