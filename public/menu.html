@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Chính - 2048</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tải Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Liên kết đến tệp CSS của bạn -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-200 no-select">
+
+    <div class="w-full max-w-md mx-auto p-4 flex flex-col min-h-screen">
+        <!-- Thanh điều hướng (Navigation Bar) -->
+        <header class="w-full py-3">
+            <nav class="flex justify-between items-center">
+                <!-- Tên người dùng -->
+                <div class="text-gray-300 text-lg">
+                    <span id="nav-username" class="font-bold"></span>
+                </div>
+                <!-- Avatar -->
+                <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center ring-2 ring-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Nội dung Menu chính -->
+        <main class="flex-grow flex flex-col items-center justify-center">
+            <div class="w-full text-center">
+                 <h1 class="text-6xl font-black text-white text-center mb-10">2048</h1>
+                 <div class="space-y-4">
+                    <a href="game.html" class="menu-button bg-indigo-600 hover:bg-indigo-500">Chơi</a>
+                    <a href="#" class="menu-button bg-gray-600 hover:bg-gray-500">Bảng xếp hạng</a>
+                    <a href="#" class="menu-button bg-gray-600 hover:bg-gray-500">Cài đặt</a>
+                    <a href="#" id="logout-button" class="menu-button bg-red-600 hover:bg-red-500">Đăng xuất</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Liên kết đến tệp JavaScript xác thực -->
+    <script src="auth.js"></script>
+    <script>
+        // Hiển thị tên người dùng hiện tại trên thanh điều hướng
+        document.getElementById('nav-username').textContent = localStorage.getItem('2048-currentUser') || 'Guest';
+    </script>
+</body>
+</html>

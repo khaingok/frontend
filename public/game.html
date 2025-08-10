@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 2048</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen no-select">
+
+    <div class="w-full max-w-md mx-auto p-4 sm:p-6 bg-gray-800 rounded-xl shadow-2xl space-y-4">
+        <!-- Nút quay lại, điểm số, nút chơi lại -->
+        <header class="flex items-center justify-between">
+            <a href="menu.html" class="px-4 py-2 bg-gray-600 hover:bg-gray-500 text-white font-bold rounded-lg transition-colors no-underline">
+                &larr; Menu
+            </a>
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="text-center p-2 sm:px-4 bg-gray-700 rounded-lg">
+                    <div class="text-xs sm:text-sm font-bold text-gray-400">ĐIỂM</div>
+                    <div id="score" class="text-lg sm:text-2xl font-bold">0</div>
+                </div>
+                <button id="reset-button" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg transition-colors">
+                    Chơi lại
+                </button>
+            </div>
+        </header>
+
+        <!-- GAEMBOARD -->
+        <main id="game-container" class="relative">
+            <div id="game-board" class="grid grid-cols-4 grid-rows-4 gap-2 sm:gap-3 bg-gray-700 p-2 sm:p-3 rounded-lg aspect-square">
+                <!-- Các ô tạo bằng JavaScript -->
+            </div>
+            <!-- GAMEOVER -->
+            <div id="game-over-overlay" class="hidden absolute inset-0 bg-black/70 flex-col items-center justify-center rounded-lg">
+                <h2 class="text-5xl font-extrabold text-white mb-4">Thua rồi!</h2>
+                <button id="try-again-button" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg transition-colors text-lg">
+                    Thử lại
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
