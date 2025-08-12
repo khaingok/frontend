@@ -262,3 +262,12 @@ async function saveScoreToDatabase(finalScore) {
         console.error('Lỗi khi gửi điểm:', error);
     }
 }
+
+fetch(`${window.API_URL}/api/save-score`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username: 'Alice', score: 5000 })
+})
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
